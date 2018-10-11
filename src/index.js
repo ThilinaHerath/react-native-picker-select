@@ -143,6 +143,22 @@ export default class RNPickerSelect extends PureComponent {
         this.togglePicker = this.togglePicker.bind(this);
     }
 
+    componentWillReceiveProps(props) {
+        if (props.value) {
+          const items = RNPickerSelect.handlePlaceholder({
+            placeholder: props.placeholder
+          }).concat(props.items);
+          const { selectedItem } = RNPickerSelect.getSelectedItem({
+            items,
+            key: props.itemKey,
+            value: props.value
+          });
+          this.setState({
+            selectedItem: selectedItem
+          });
+        }
+      }
+    
     onUpArrow() {
         this.togglePicker();
         setTimeout(() => {
@@ -382,7 +398,6 @@ export default class RNPickerSelect extends PureComponent {
                 >
                     {this.renderPickerItems()}
                 </Picker>
-                <View style={[styles.underline, this.props.style.underline]} />
             </View>
         );
     }
