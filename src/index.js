@@ -442,7 +442,7 @@ const styles = StyleSheet.create({
   done: {
     color: '#007AFE',
     fontWeight: 'bold',
-    padding: 10,
+    padding: 9,
     fontSize: 18
   },
   underline: {
