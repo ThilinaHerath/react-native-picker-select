@@ -306,6 +306,7 @@ export default class RNPickerSelect extends PureComponent {
           onPress={() => {
             this.togglePicker(true);
           }}
+          accessibilityLabel={this.props.accessibilityLabel}
         >
           {this.renderTextInputOrChildren()}
         </TouchableWithoutFeedback>
