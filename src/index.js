@@ -160,7 +160,7 @@ export default class RNPickerSelect extends PureComponent {
         selectedItem: selectedItem
       });
     }
-    if (props.items && this.state.items.length !== props.items.length) {
+    if (props.items && !isEqual(this.state.items, props.items)) {
       this.setState({
         items: props.items
       });
